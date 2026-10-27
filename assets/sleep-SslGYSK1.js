@@ -1,0 +1,2 @@
+const i=async e=>{if(e.args.length===0){e.stderr.write("sleep: missing operand\n");return 1}const r=parseFloat(e.args[0]);if(isNaN(r)||r<0){e.stderr.write(`sleep: invalid time interval '${e.args[0]}'
+`);return 1}const s=Math.round(r*1e3);await new Promise(n=>{const t=setTimeout(n,s);const a=()=>{clearTimeout(t);n()};e.signal.addEventListener("abort",a,{once:true})});return e.signal.aborted?130:0};export{i as default};

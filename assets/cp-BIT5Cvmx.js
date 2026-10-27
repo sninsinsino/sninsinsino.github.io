@@ -1,0 +1,2 @@
+import{r as t,b as o}from"./path-DhJOhaQA.js";import{V as n}from"./events-BhE15HtZ.js";const d=async r=>{if(r.args.length<2){r.stderr.write("cp: missing operand\n");return 1}const a=t(r.cwd,r.args[0]);let s=t(r.cwd,r.args[1]);try{if(r.vfs.exists(s)){const e=r.vfs.stat(s);if(e.type==="directory"){s=t(s,o(a))}}r.vfs.copyFile(a,s);return 0}catch(e){if(e instanceof n){r.stderr.write(`cp: ${e.message}
+`);return 1}throw e}};export{d as default};

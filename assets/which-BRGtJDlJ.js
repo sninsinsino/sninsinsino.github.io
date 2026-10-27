@@ -1,0 +1,4 @@
+const i=new Set(["cd","pwd","echo","clear","export","exit","true","false","jobs","fg","bg","history","source",".","alias","unalias"]);const a=new Set(["ls","cat","mkdir","rm","cp","mv","touch","grep","head","tail","wc","sort","uniq","cut","tr","sed","awk","find","tree","stat","ln","du","df","chmod","file","tee","xargs","yes","printf","env","uname","date","sleep","uptime","whoami","hostname","free","which","curl","wget","ping","dig","tar","gzip","gunzip","zip","unzip","node","pkg","rmdir","realpath","basename","dirname","mktemp","chown","diff","nl","rev","ps","top","kill","watch","cal","bc","man","help"]);const n=async e=>{if(e.args.length===0){e.stderr.write("which: missing operand\n");return 1}let r=0;for(const t of e.args){if(i.has(t)){e.stdout.write(`${t}: shell built-in command
+`)}else if(a.has(t)){e.stdout.write(`${t}
+`)}else{e.stderr.write(`which: ${t}: not found
+`);r=1}}return r};export{n as default};

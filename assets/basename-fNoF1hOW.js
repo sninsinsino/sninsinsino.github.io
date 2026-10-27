@@ -1,0 +1,1 @@
+import{b as a}from"./path-DhJOhaQA.js";const t=async s=>{if(s.args.length===0){s.stderr.write("basename: missing operand\n");return 1}const n=s.args[0];const r=s.args[1];s.stdout.write(a(n,r)+"\n");return 0};export{t as default};

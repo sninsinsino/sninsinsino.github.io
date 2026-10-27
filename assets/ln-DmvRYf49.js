@@ -1,0 +1,1 @@
+const s=async r=>{let e=false;for(const n of r.args){if(n==="-s")e=true}if(e){r.stderr.write("ln: symbolic links are not supported in Lifo VFS\n")}else{r.stderr.write("ln: hard links are not supported in Lifo VFS\n")}return 1};export{s as default};

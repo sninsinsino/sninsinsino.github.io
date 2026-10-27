@@ -1,0 +1,3 @@
+import{p as f}from"./args-uWXPMqKr.js";import{r as m}from"./path-DhJOhaQA.js";import{V as p}from"./events-BhE15HtZ.js";const l={recursive:{type:"boolean",short:"r"},Recursive:{type:"boolean",short:"R"},force:{type:"boolean",short:"f"}};const y=async r=>{const{flags:s,positional:n}=f(r.args,l);const a=s.recursive||s.Recursive;const c=s.force;if(n.length===0){r.stderr.write("rm: missing operand\n");return 1}let o=0;for(const t of n){const i=m(r.cwd,t);try{const e=r.vfs.stat(i);if(e.type==="directory"){if(!a){r.stderr.write(`rm: cannot remove '${t}': Is a directory
+`);o=1;continue}r.vfs.rmdirRecursive(i)}else{r.vfs.unlink(i)}}catch(e){if(e instanceof p){if(!c){r.stderr.write(`rm: ${t}: ${e.message}
+`);o=1}}else{throw e}}}return o};export{y as default};

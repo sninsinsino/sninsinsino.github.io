@@ -1,0 +1,1 @@
+import{r as f}from"./path-DhJOhaQA.js";const l=async e=>{let a=false;const o=[];for(const t of e.args){if(t==="-a"){a=true}else{o.push(t)}}let s="";if(e.stdin){s=await e.stdin.readAll()}e.stdout.write(s);for(const t of o){const r=f(e.cwd,t);if(a){e.vfs.appendFile(r,s)}else{e.vfs.writeFile(r,s)}}return 0};export{l as default};

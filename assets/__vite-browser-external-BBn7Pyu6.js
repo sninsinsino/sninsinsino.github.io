@@ -1,0 +1,1 @@
+const e="\x1B[0m";const t="\x1B[1m";const o="\x1B[32m";const s="\x1B[34m";const a=Object.freeze(Object.defineProperty({__proto__:null},Symbol.toStringTag,{value:"Module"}));export{t as B,o as G,e as R,a as _,s as a};

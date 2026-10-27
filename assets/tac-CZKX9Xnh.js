@@ -1,0 +1,2 @@
+import{r as i}from"./path-DhJOhaQA.js";import{V as a}from"./events-BhE15HtZ.js";const f=async r=>{let n=0;const o=e=>{const s=e.replace(/\n$/,"").split("\n");s.reverse();r.stdout.write(s.join("\n")+"\n")};if(r.args.length===0){r.stderr.write("Usage: tac FILE...\n");r.stderr.write("Print files in reverse line order.\n");return 1}for(const e of r.args){const s=i(r.cwd,e);try{o(r.vfs.readFileString(s))}catch(t){if(t instanceof a){r.stderr.write(`tac: ${e}: ${t.message}
+`);n=1}else{throw t}}}return n};export{f as default};
