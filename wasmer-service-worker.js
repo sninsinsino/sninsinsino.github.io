@@ -45,10 +45,13 @@ async function saveKeys() {
 	} catch { /* ignore */ }
 }
 
+const WEBKIT = /iPhone|iPad|iPod/.test(self.navigator.userAgent) || (/Safari\//.test(self.navigator.userAgent) && !/Chrome|Chromium|Edg|Firefox|Android/.test(self.navigator.userAgent));
+
 function withIsolation(resp) {
 	if (!resp || resp.status === 0 || resp.type === 'opaque' || resp.type === 'opaqueredirect') return resp;
 	const h = new Headers(resp.headers);
-	h.set('Cross-Origin-Embedder-Policy', 'credentialless');
+	// WebKit (all iOS browsers, desktop Safari) does not implement credentialless; require-corp also isolates the page
+	h.set('Cross-Origin-Embedder-Policy', WEBKIT ? 'require-corp' : 'credentialless');
 	h.set('Cross-Origin-Opener-Policy', 'same-origin');
 	h.set('Cross-Origin-Resource-Policy', 'cross-origin');
 	return new Response(resp.body, { status: resp.status, statusText: resp.statusText, headers: h });

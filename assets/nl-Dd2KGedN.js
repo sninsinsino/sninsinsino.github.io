@@ -1,0 +1,5 @@
+import{p as g}from"./args-uWXPMqKr.js";import{r as f,i as h,c as u,V as w}from"./lifo-Dg_1Vsz2.js";import"./index-D5huO7Bb.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const b={"body-numbering":{type:"string",short:"b"},"number-width":{type:"string",short:"w"}};const k=async e=>{const{flags:o,positional:n}=g(e.args,b);const a=o["body-numbering"]||"t";const l=parseInt(o["number-width"]||"6",10);let s;if(n.length===0||n[0]==="-"){if(e.stdin){s=await e.stdin.readAll()}else{e.stderr.write("nl: missing operand\n");return 1}}else{const r=f(e.cwd,n[0]);if(h(u(r))){e.stderr.write(`nl: ${n[0]}: binary file, skipping
+`);return 1}try{s=e.vfs.readFileString(r)}catch(t){if(t instanceof w){e.stderr.write(`nl: ${n[0]}: ${t.message}
+`);return 1}throw t}}const i=s.split("\n");const p=s.endsWith("\n");let d=1;for(let r=0;r<i.length;r++){const t=i[r];if(r===i.length-1&&p&&t===""){break}const m=a==="a"?true:a==="t"?t.length>0:false;if(m){e.stdout.write(`${String(d).padStart(l," ")}	${t}
+`);d++}else{e.stdout.write(`${" ".repeat(l)}	${t}
+`)}}return 0};export{k as default};
