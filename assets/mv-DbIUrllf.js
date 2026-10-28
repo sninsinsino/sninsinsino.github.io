@@ -1,2 +1,0 @@
-import{r as a,b as n}from"./path-DhJOhaQA.js";import{V as o}from"./events-BhE15HtZ.js";const f=async r=>{if(r.args.length<2){r.stderr.write("mv: missing operand\n");return 1}const t=a(r.cwd,r.args[0]);let s=a(r.cwd,r.args[1]);try{if(r.vfs.exists(s)){const e=r.vfs.stat(s);if(e.type==="directory"){s=a(s,n(t))}}r.vfs.rename(t,s);return 0}catch(e){if(e instanceof o){r.stderr.write(`mv: ${e.message}
-`);return 1}throw e}};export{f as default};

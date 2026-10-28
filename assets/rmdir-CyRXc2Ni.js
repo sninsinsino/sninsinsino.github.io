@@ -1,2 +1,0 @@
-import{p as m}from"./args-uWXPMqKr.js";import{r as p,d as n}from"./path-DhJOhaQA.js";import{V as d}from"./events-BhE15HtZ.js";const f={parents:{type:"boolean",short:"p"}};const h=async e=>{const{flags:i,positional:s}=m(e.args,f);if(s.length===0){e.stderr.write("rmdir: missing operand\n");return 1}let t=0;for(const o of s){const a=p(e.cwd,o);try{e.vfs.rmdir(a);if(i.parents){let r=n(a);while(r!=="/"&&r!=="."){try{e.vfs.rmdir(r);r=n(r)}catch{break}}}}catch(r){if(r instanceof d){e.stderr.write(`rmdir: ${o}: ${r.message}
-`);t=1}else{throw r}}}return t};export{h as default};

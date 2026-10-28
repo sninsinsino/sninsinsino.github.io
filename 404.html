@@ -14,7 +14,7 @@
     return;
   }
   try {
-    await navigator.serviceWorker.register('/sw.js', { scope: '/' });
+    await navigator.serviceWorker.register('/wasmer-service-worker.js', { scope: '/' });
     await navigator.serviceWorker.ready;
     if (navigator.serviceWorker.controller) location.reload();
     else navigator.serviceWorker.addEventListener('controllerchange', function () { location.reload(); });

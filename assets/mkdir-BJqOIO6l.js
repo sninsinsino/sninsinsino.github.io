@@ -1,2 +1,0 @@
-import{p as i}from"./args-uWXPMqKr.js";import{r as p}from"./path-DhJOhaQA.js";import{V as m}from"./events-BhE15HtZ.js";const f={parents:{type:"boolean",short:"p"}};const g=async r=>{const{flags:a,positional:e}=i(r.args,f);if(e.length===0){r.stderr.write("mkdir: missing operand\n");return 1}let o=0;for(const t of e){const n=p(r.cwd,t);try{r.vfs.mkdir(n,{recursive:a.parents})}catch(s){if(s instanceof m){r.stderr.write(`mkdir: ${t}: ${s.message}
-`);o=1}else{throw s}}}return o};export{g as default};

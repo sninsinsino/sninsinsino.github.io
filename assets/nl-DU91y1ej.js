@@ -1,5 +1,0 @@
-import{p as g}from"./args-uWXPMqKr.js";import{r as f}from"./path-DhJOhaQA.js";import{V as h}from"./events-BhE15HtZ.js";import{i as u,g as w}from"./mime-BcQenZTr.js";const b={"body-numbering":{type:"string",short:"b"},"number-width":{type:"string",short:"w"}};const N=async e=>{const{flags:o,positional:n}=g(e.args,b);const a=o["body-numbering"]||"t";const l=parseInt(o["number-width"]||"6",10);let s;if(n.length===0||n[0]==="-"){if(e.stdin){s=await e.stdin.readAll()}else{e.stderr.write("nl: missing operand\n");return 1}}else{const r=f(e.cwd,n[0]);if(u(w(r))){e.stderr.write(`nl: ${n[0]}: binary file, skipping
-`);return 1}try{s=e.vfs.readFileString(r)}catch(t){if(t instanceof h){e.stderr.write(`nl: ${n[0]}: ${t.message}
-`);return 1}throw t}}const i=s.split("\n");const m=s.endsWith("\n");let d=1;for(let r=0;r<i.length;r++){const t=i[r];if(r===i.length-1&&m&&t===""){break}const p=a==="a"?true:a==="t"?t.length>0:false;if(p){e.stdout.write(`${String(d).padStart(l," ")}	${t}
-`);d++}else{e.stdout.write(`${" ".repeat(l)}	${t}
-`)}}return 0};export{N as default};
