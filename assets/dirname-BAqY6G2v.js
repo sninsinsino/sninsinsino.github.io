@@ -1,0 +1,1 @@
+import{k as o}from"./lifo-BuSbOTZt.js";import"./index-B9KyBiN9.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const s=async r=>{if(r.args.length===0){r.stderr.write("dirname: missing operand\n");return 1}for(const n of r.args){r.stdout.write(o(n)+"\n")}return 0};export{s as default};

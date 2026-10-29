@@ -1,2 +1,0 @@
-import{p as a}from"./args-uWXPMqKr.js";import{r as c,V as p}from"./lifo-CcGkS150.js";import"./index-CTt8OI8K.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const f={recursive:{type:"boolean",short:"R"}};const g=async r=>{const{positional:e}=a(r.args,f);if(e.length<2){r.stderr.write("chown: missing operand\n");return 1}const n=e.slice(1);let o=0;for(const t of n){const i=c(r.cwd,t);try{r.vfs.stat(i)}catch(s){if(s instanceof p){r.stderr.write(`chown: ${t}: ${s.message}
-`);o=1}else{throw s}}}return o};export{g as default};
