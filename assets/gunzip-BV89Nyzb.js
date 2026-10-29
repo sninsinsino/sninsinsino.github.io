@@ -1,0 +1,4 @@
+import{r as p,j as u,V as d}from"./lifo-Csxz8tvD.js";import"./index-CCjKzWHw.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const k=async e=>{let o=false;const t=[];for(const r of e.args){switch(r){case"-k":case"--keep":o=true;break;case"--help":e.stdout.write("Usage: gunzip [-k] file.gz\n");e.stdout.write("  -k, --keep   keep original file\n");return 0;default:if(r.startsWith("-")){e.stderr.write(`gunzip: unknown option: ${r}
+`);return 1}t.push(r)}}if(t.length===0){e.stderr.write("gunzip: missing file operand\n");return 1}let n=0;for(const r of t){const i=p(e.cwd,r);try{if(!i.endsWith(".gz")){e.stderr.write(`gunzip: ${r}: unknown suffix -- ignored
+`);n=1;continue}const s=e.vfs.readFile(i);const a=await u(s);const f=i.slice(0,-3);e.vfs.writeFile(f,a);if(!o)e.vfs.unlink(i)}catch(s){if(s instanceof d){e.stderr.write(`gunzip: ${r}: ${s.message}
+`);n=1}else{throw s}}}return n};export{k as default};

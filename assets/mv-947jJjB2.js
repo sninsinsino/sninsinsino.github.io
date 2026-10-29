@@ -1,0 +1,2 @@
+import{r as t,b as n,V as o}from"./lifo-Csxz8tvD.js";import"./index-CCjKzWHw.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const p=async r=>{if(r.args.length<2){r.stderr.write("mv: missing operand\n");return 1}const a=t(r.cwd,r.args[0]);let s=t(r.cwd,r.args[1]);try{if(r.vfs.exists(s)){const e=r.vfs.stat(s);if(e.type==="directory"){s=t(s,n(a))}}r.vfs.rename(a,s);return 0}catch(e){if(e instanceof o){r.stderr.write(`mv: ${e.message}
+`);return 1}throw e}};export{p as default};
