@@ -7,4 +7,4 @@ VS Code in the browser (monaco-vscode-api) with a real Node sandbox.
 - Dev servers are previewed at `/<key>/` (the default is `/app/`) or as an editor tab.
 - Network goes through a public Wisp relay, selectable under "Relays" (auto, manual or custom).
 
-Nothing persists across reloads.
+Your files in `/workspace/home` are saved in the browser (IndexedDB) and restored on reload. `node_modules` and caches are not saved; run `lifo-setup` after a reload. Use "Reset" to wipe the saved workspace.
