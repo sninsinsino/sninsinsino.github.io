@@ -1,0 +1,2 @@
+import{r as a,V as n}from"./lifo-Dptx2yRk.js";import"./index-Cjn3rT7F.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const d=async r=>{if(r.args.length===0){r.stderr.write("touch: missing operand\n");return 1}let o=0;for(const t of r.args){const s=a(r.cwd,t);try{r.vfs.touch(s)}catch(e){if(e instanceof n){r.stderr.write(`touch: ${t}: ${e.message}
+`);o=1}else{throw e}}}return o};export{d as default};

@@ -1,0 +1,2 @@
+import{r as n,V as a}from"./lifo-Dptx2yRk.js";import"./index-Cjn3rT7F.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const l=async r=>{if(r.args.length===0){if(r.stdin){const e=await r.stdin.readAll();r.stdout.write(e);return 0}r.stderr.write("cat: missing operand\n");return 1}let s=0;for(const e of r.args){const o=n(r.cwd,e);try{const t=r.vfs.readFileString(o);r.stdout.write(t)}catch(t){if(t instanceof a){r.stderr.write(`cat: ${e}: ${t.message}
+`);s=1}else{throw t}}}return s};export{l as default};
