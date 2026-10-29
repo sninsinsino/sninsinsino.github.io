@@ -1,1 +1,0 @@
-import{b as a}from"./lifo-Dpd-8k3o.js";import"./index-CKn8RzkF.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const i=async r=>{if(r.args.length===0){r.stderr.write("basename: missing operand\n");return 1}const s=r.args[0];const n=r.args[1];r.stdout.write(a(s,n)+"\n");return 0};export{i as default};
