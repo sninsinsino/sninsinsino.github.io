@@ -1,2 +1,0 @@
-import{r as t,b as o,V as i}from"./lifo-DGnCJhnM.js";import"./index-3gGMTWnb.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const d=async r=>{if(r.args.length<2){r.stderr.write("cp: missing operand\n");return 1}const a=t(r.cwd,r.args[0]);let s=t(r.cwd,r.args[1]);try{if(r.vfs.exists(s)){const e=r.vfs.stat(s);if(e.type==="directory"){s=t(s,o(a))}}r.vfs.copyFile(a,s);return 0}catch(e){if(e instanceof i){r.stderr.write(`cp: ${e.message}
-`);return 1}throw e}};export{d as default};
