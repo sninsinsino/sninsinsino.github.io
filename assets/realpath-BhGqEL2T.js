@@ -1,0 +1,2 @@
+import{r as o,V as n}from"./lifo-CP4F9sCM.js";import"./index-Cm0D7J6a.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";const f=async r=>{if(r.args.length===0){r.stderr.write("realpath: missing operand\n");return 1}let t=0;for(const s of r.args){const a=o(r.cwd,s);try{r.vfs.stat(a);r.stdout.write(a+"\n")}catch(e){if(e instanceof n){r.stderr.write(`realpath: ${s}: ${e.message}
+`);t=1}else{throw e}}}return t};export{f as default};

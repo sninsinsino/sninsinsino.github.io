@@ -1,3 +1,0 @@
-import{r as o,i as a,c as d,V as f}from"./lifo-6Um6cLDe.js";import"./index-D2VFV6sS.js";import"./extensions-BQXoq6hb.js";import"./preload-helper-Dx40qi2-.js";function s(r){return r.split("\n").map(i=>[...i].reverse().join("")).join("\n")}const u=async r=>{if(r.args.length===0){if(r.stdin){const e=await r.stdin.readAll();r.stdout.write(s(e));return 0}r.stderr.write("rev: missing operand\n");return 1}let i=0;for(const e of r.args){const n=o(r.cwd,e);try{r.vfs.stat(n);if(a(d(n))){r.stderr.write(`rev: ${e}: binary file, skipping
-`);continue}const t=r.vfs.readFileString(n);r.stdout.write(s(t))}catch(t){if(t instanceof f){r.stderr.write(`rev: ${e}: ${t.message}
-`);i=1}else{throw t}}}return i};export{u as default};
